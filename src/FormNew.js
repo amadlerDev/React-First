@@ -7,9 +7,10 @@ function FormNew() {
     const onSubmit = async (event) => {
         event.preventDefault();
 
-        const value = document.querySelector('.value');
-        const element = <div>{input}</div>;
-        value.appendChild(document.createTextNode(input));
+        const parent = document.querySelector('.value');
+        const elem = document.createElement("div");
+        elem.innerHTML = input + "\n"; // add delete icon
+        parent.appendChild(elem);
     };
 
     const onChange = (event) => {
@@ -26,6 +27,8 @@ function FormNew() {
             </label>
             <button type="submit">Submit</button>
             <div className="value"></div>
+            {/* {elements.map((item) => <p>{item}</p>)} */}
+            
         </form>
     )
 }
